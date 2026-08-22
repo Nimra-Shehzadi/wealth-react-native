@@ -8,7 +8,7 @@
 - Added OTP verification for account verification.
 - Tested account creation and authentication flow on the mobile device.
 - Added authentication-based navigation and routing.
-- Introduced RabbitMQ for the project.
+- Created account on coderabbit.
 - Created the initial account setup and authentication structure.
 
 ## Screens Completed
@@ -21,16 +21,8 @@
 
 Authentication flow is implemented and tested on the mobile device.
 
-## Authentication Screens
-
-### Create Account
-
-![Create Account](./assets/screenshots/sign-up.jpg)
-
-### Sign In
-
-![Sign In](./assets/screenshots/sign-in.jpg)
-
-### OTP Verification
-
-![OTP Verification](./assets/screenshots/otp.jpg)
+<p align="center">
+  <img src="./assets/screenshots/sign-up.jpg" width="220">
+  <img src="./assets/screenshots/sign-in.jpg" width="220">
+  <img src="./assets/screenshots/otp.jpg" width="220">
+</p>
