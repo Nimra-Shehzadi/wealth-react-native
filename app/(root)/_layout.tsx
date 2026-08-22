@@ -1,18 +1,36 @@
-import { ClerkProvider } from "@clerk/expo";
-import { tokenCache } from "@clerk/expo/token-cache";
-import { Slot } from "expo-router";
-import "../../global.css";
+import { useUserSync } from "@/hooks/useUserSync";
+import { useUserStore } from "@/store/userStore";
+import { useAuth } from "@clerk/expo";
+import { Redirect, Slot, usePathname } from "expo-router";
+import { useEffect, useState } from "react";
+import { ActivityIndicator, View } from "react-native";
 
-const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
+export default function RootGroupLayout() {
+  const { isSignedIn, isLoaded } = useAuth();
+  const needsOnboarding = useUserStore((state) => state.needsOnboarding);
+  const pathname = usePathname();
+  const [minLoadDone, setMinLoadDone] = useState(false);
 
-if (!publishableKey) {
-  throw new Error("Add your Clerk Publishable Key to the .env file");
-}
+  useUserSync();
 
-export default function RootLayout() {
-  return (
-    <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
-      <Slot />
-    </ClerkProvider>
-  );
+  useEffect(() => {
+    const t = setTimeout(() => setMinLoadDone(true), 1500);
+    return () => clearTimeout(t);
+  }, []);
+
+  if (!isLoaded || !minLoadDone) return null;
+
+  if (!isSignedIn) return <Redirect href="/sign-in" />;
+
+  if (!minLoadDone || needsOnboarding === null) {
+    return (
+      <View className="flex-1 bg-brand-body items-center justify-center">
+        <ActivityIndicator size="large" color="#1A1D26" />
+      </View>
+    );
+  }
+  if (needsOnboarding && pathname !== "/onboarding") {
+    return <Redirect href="/(root)/onboarding" />;
+  }
+  return <Slot />;
 }
