@@ -1,8 +1,8 @@
 import { ALL_CURRENCIES, CurrencyPicker } from "@/components/CurrencyPicker";
 import { useSupabase } from "@/hooks/useSupabase";
 import {
-    OnboardingFormValues,
-    onboardingSchema,
+  OnboardingFormValues,
+  onboardingSchema,
 } from "@/lib/schemas/onboarding";
 import { useUserStore } from "@/store/userStore";
 import { useUser } from "@clerk/expo";
@@ -12,13 +12,13 @@ import { router } from "expo-router";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import {
-    Image,
-    KeyboardAvoidingView,
-    Platform,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  Image,
+  KeyboardAvoidingView,
+  Platform,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 

@@ -18,19 +18,16 @@ export default function RootGroupLayout() {
     return () => clearTimeout(t);
   }, []);
 
-  if (!isLoaded || !minLoadDone) return null;
-
+  if (!isLoaded) return null;
   if (!isSignedIn) return <Redirect href="/sign-in" />;
-
-  if (!minLoadDone || needsOnboarding === null) {
+  if (!minLoadDone || needsOnboarding === null)
     return (
       <View className="flex-1 bg-brand-body items-center justify-center">
         <ActivityIndicator size="large" color="#1A1D26" />
       </View>
     );
-  }
-  if (needsOnboarding && pathname !== "/onboarding") {
+  if (needsOnboarding && pathname !== "/onboarding")
     return <Redirect href="/(root)/onboarding" />;
-  }
+
   return <Slot />;
 }
