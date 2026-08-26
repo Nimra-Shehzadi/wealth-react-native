@@ -9,9 +9,15 @@
 - Identified and fixed module/import errors.
 - Updated the project README with features, tech stack, and setup instructions.
 
-App Screenshots
+## **App Screenshots**
 
-<p align="center"> <img src="screenshots/add transaction.jpg" width="18%" /> <img src="screenshots/home.jpg" width="18%" /> <img src="screenshots/transaction.jpg" width="18%" /> <img src="screenshots/voice log.jpg" width="18%" /> <img src="screenshots/profile.jpg" width="18%" /> </p>
+<p align="center">
+  <img src="./screenshots/add%20transaction.jpg" width="18%" />
+  <img src="./screenshots/home.jpg" width="18%" />
+  <img src="./screenshots/transaction.jpg" width="18%" />
+  <img src="./screenshots/voice%20log.jpg" width="18%" />
+  <img src="./screenshots/profile.jpg" width="18%" />
+</p>
 
 Current Status
 
