@@ -1,12 +1,12 @@
 import { useSupabase } from "@/hooks/useSupabase";
-import {
-    createTransaction,
-    deleteTransaction,
-    NewTransaction,
-    Transaction,
-    TransactionType,
-} from "@/lib/services/transactions";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import {
+  createTransaction,
+  deleteTransaction,
+  NewTransaction,
+  Transaction,
+  TransactionType,
+} from "../../lib/schemas/services/transactions";
 
 export function useCreateTransaction() {
   const supabase = useSupabase();

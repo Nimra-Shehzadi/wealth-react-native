@@ -1,50 +1,147 @@
-# Welcome to your Expo app 👋
+# 💰 Welth — Personal Finance App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+> A modern **React Native finance management app** built with Expo to help users track income, expenses, accounts, and budgets with AI-powered features.
 
-## Get started
+---
 
-1. Install dependencies
+## ✨ Features
 
-   ```bash
-   npm install
-   ```
+- 🔐 **Authentication** — Secure sign in/sign up with OTP using Clerk
+- 👋 **Onboarding** — Set up currency and starting balance
+- 💳 **Accounts** — Manage cash, bank, credit card, and savings accounts
+- 💸 **Transactions** — Add, search, filter, and manage income & expenses
+- 📊 **Dashboard** — View balances, spending, and financial insights
+- 🎯 **Budget Tracking** — Set and monitor monthly budgets
+- 🤖 **AI Receipt Scanner** — Extract transaction details from receipts
+- 🎙️ **AI Voice Entry** — Add transactions using voice input
+- 💱 **Currency Picker** — Select from multiple currencies
+- 📄 **CSV Export** — Export and share recent transactions
+- 🤖 **AI Assistant** — Get insights about your spending
+- 📧 **Budget Alerts & Tips** — Automated financial emails using Supabase Edge Functions
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## 🛠️ Tech Stack
 
-In the output, you'll find options to open the app in a
+| Technology               | Purpose             |
+| ------------------------ | ------------------- |
+| ⚛️ React Native          | Mobile App          |
+| 📱 Expo                  | Development & Build |
+| 🧭 Expo Router           | Navigation          |
+| 🔐 Clerk                 | Authentication      |
+| 🗄️ Supabase              | Database & Backend  |
+| 🤖 Google Gemini         | AI Features         |
+| 🎨 NativeWind            | Styling             |
+| 🐻 Zustand               | State Management    |
+| 🔄 TanStack Query        | Data Fetching       |
+| 📝 React Hook Form + Zod | Forms & Validation  |
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 📁 Project Structure
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```text
+📦 Welth
+├── 📱 app/              # Screens & navigation
+├── 🧩 components/       # Reusable UI components
+├── 🪝 hooks/            # Custom hooks & mutations
+├── 🗄️ lib/              # Supabase & app services
+├── 🧠 store/            # Zustand stores
+├── ⚡ supabase/         # Edge Functions
+├── 📜 scripts/          # Database & cron scripts
+└── 🎨 global.css        # Global styling
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🚀 Getting Started
 
-To learn more about developing your project with Expo, look at the following resources:
+### 1️⃣ Install Dependencies
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npm install
+```
 
-## Join the community
+### 2️⃣ Configure Environment Variables
 
-Join our community of developers creating universal apps.
+Create a `.env` file in the project root:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```env
+EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY=
+EXPO_PUBLIC_SUPABASE_URL=
+EXPO_PUBLIC_SUPABASE_KEY=
+EXPO_PUBLIC_GEMINI_API_KEY=
+```
+
+> 🔒 Never commit your `.env` file to GitHub.
+
+### 3️⃣ Setup Supabase
+
+Create the required tables and Row Level Security policies in the **Supabase SQL Editor**.
+
+The main tables are:
+
+- 👤 Users
+- 💳 Accounts
+- 💸 Transactions
+- 🎯 Budgets
+
+### 4️⃣ Start the App
+
+```bash
+npx expo start
+```
+
+For a clean start:
+
+```bash
+npx expo start --clear
+```
+
+---
+
+## 🤖 AI Features
+
+The app uses **Google Gemini** for:
+
+- 🧾 Receipt scanning
+- 🎙️ Voice transaction processing
+- 💡 Personalized financial insights
+
+---
+
+## ⚡ Supabase Edge Functions
+
+The app includes two automated backend functions:
+
+- 🚨 `check-budget-alerts` — Sends budget threshold alerts.
+- 💡 `weekly-tips` — Sends personalized weekly spending tips.
+
+---
+
+## 🔐 Security
+
+- Clerk handles user authentication.
+- Supabase Row Level Security protects user data.
+- API keys are stored in environment variables.
+- Sensitive `.env` files are excluded from Git.
+
+---
+
+## 📱 Run on Mobile
+
+Install **Expo Go** on your mobile device and scan the QR code generated by:
+
+```bash
+npx expo start
+```
+
+Make sure your phone and development computer are connected to the same network when using LAN mode.
+
+---
+
+## 👩‍💻 Developer
+
+**Nimra Shehzadi**
+
+Built with React Native, Expo, Supabase & AI.
